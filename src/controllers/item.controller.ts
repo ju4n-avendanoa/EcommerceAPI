@@ -8,6 +8,8 @@ import {
 } from "../services/item.service";
 import { RequestExt } from "../interface/auth.interface";
 
+// Handler for getting all items
+
 export async function getItemsHandler(req: RequestExt, res: Response) {
   try {
     const items = await getItems();
@@ -17,6 +19,8 @@ export async function getItemsHandler(req: RequestExt, res: Response) {
     res.status(403).json({ error: error.message });
   }
 }
+
+// Handler for getting an item by ID
 
 export async function getItemByIdHandler(req: RequestExt, res: Response) {
   try {
@@ -29,6 +33,8 @@ export async function getItemByIdHandler(req: RequestExt, res: Response) {
   }
 }
 
+// Handler for creating a new item
+
 export async function createItemHandler(req: Request, res: Response) {
   try {
     const newItem = await createItem(req.body);
@@ -37,6 +43,8 @@ export async function createItemHandler(req: Request, res: Response) {
     res.status(400).json({ error: error.message });
   }
 }
+
+// Handler for deleting an item by ID
 
 export async function deleteItemByIdHandler(req: Request, res: Response) {
   try {
@@ -47,6 +55,8 @@ export async function deleteItemByIdHandler(req: Request, res: Response) {
     res.status(404).json({ error: error.message });
   }
 }
+
+// Handler for updating an item by ID
 
 export async function updateItemByIdHandler(req: Request, res: Response) {
   try {

@@ -5,41 +5,41 @@ services:
       context: .
       target: development
     volumes:
-      - ./:/usr/src/app
+      - ./:/usr/src/app # Mounts the current directory as a volume in the container
       - /usr/src/app/node_modules
     ports:
-      - 5000:5000
-    command: npm run devo
+      - 5000:5000 # Maps port 5000 of the host to port 5000 of the container
+    command: npm run devo # Runs the 'npm run devo' command inside the container
     depends_on:
-      - mongodb
+      - mongodb # Specifies that this service depends on the 'mongodb' service
     networks:
-      - myNetwork
+      - myNetwork # Connects the service to the 'myNetwork' network
 
   mongodb:
-    image: mongo
-    container_name: mongodb
-    restart: always
+    image: mongo # Uses the 'mongo' image from Docker Hub
+    container_name: mongodb # Sets the name of the container to 'mongodb'
+    restart: always # Restarts the container automatically if it stops
     volumes:
-      - mongo-db:/data/db
+      - mongo-db:/data/db # Mounts the 'mongo-db' volume to persist MongoDB data
     networks:
-      - myNetwork
+      - myNetwork # Connects the service to the 'myNetwork' network
 
   mongo-express:
-    image: mongo-express
-    container_name: mongo_express
-    restart: always
+    image: mongo-express # Uses the 'mongo-express' image from Docker Hub
+    container_name: mongo_express # Sets the name of the container to 'mongo_express'
+    restart: always # Restarts the container automatically if it stops
     ports:
-      - 8081:8081
+      - 8081:8081 # Maps port 8081 of the host to port 8081 of the container
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_BASICAUTH_USERNAME=root
-      - ME_CONFIG_BASICAUTH_PASSWORD=root
+      - ME_CONFIG_MONGODB_SERVER=mongodb # Sets the MongoDB server URL for mongo-express
+      - ME_CONFIG_BASICAUTH_USERNAME=root # Sets the basic authentication username for mongo-express
+      - ME_CONFIG_BASICAUTH_PASSWORD=root # Sets the basic authentication password for mongo-express
     networks:
-      - myNetwork
+      - myNetwork # Connects the service to the 'myNetwork' network
 
 networks:
   myNetwork:
-    driver: bridge
+    driver: bridge # Specifies the network driver as 'bridge'
 
 volumes:
-  mongo-db:
+  mongo-db: # Defines a named volume 'mongo-db' to store MongoDB data

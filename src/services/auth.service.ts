@@ -4,6 +4,11 @@ import userModel from "../models/user.model";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../utils/jwt.handle";
 
+/**
+ * Registers a new user in the database
+ * @param user - The user object containing registration details
+ * @returns If successful, returns the registered user object without the password field. If user already exists, returns "User exists".
+ */
 export async function registerNewUser(user: Auth) {
   const checkExistentUser = await userModel.findOne({ email: user.email });
   if (checkExistentUser) return "User exists";
@@ -11,16 +16,21 @@ export async function registerNewUser(user: Auth) {
   return omit(newUser.toJSON(), "password");
 }
 
+/**
+ * Authenticates a user by checking email and password
+ * @param user - The user object containing login details
+ * @returns If successful, returns a JWT token. Otherwise, returns false.
+ */
 export async function loginUser(user: Auth) {
   try {
-    const checkUSer = await userModel.findOne({ email: user.email });
-    if (!checkUSer) return false;
+    const checkUser = await userModel.findOne({ email: user.email });
+    if (!checkUser) return false;
     const checkPassword = await bcrypt.compare(
       user.password,
-      checkUSer.password
+      checkUser.password
     );
     if (!checkPassword) return false;
-    const token = generateToken(checkUSer._id);
+    const token = generateToken(checkUser._id);
     return token;
   } catch (error) {
     return false;
