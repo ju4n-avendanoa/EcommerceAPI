@@ -6,12 +6,14 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json to the container
 COPY package*.json .  
 
-RUN npm install  # Install dependencies
+# Install dependencies
+RUN npm install  
 
 # Copy the rest of the application files to the container
 COPY . .  
 
-RUN npm run build  # Build the application
+# Build the application
+RUN npm run build  
 
 # Production stage
 FROM node:16-alpine as production
