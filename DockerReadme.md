@@ -9,8 +9,8 @@ The following environment variables are used in this application:
 - `ME_CONFIG_MONGODB_SERVER`: The hostname or IP address of the MongoDB server.
 - `ME_CONFIG_BASICAUTH_USERNAME`: The username for authenticating with MongoDB.
 - `ME_CONFIG_BASICAUTH_PASSWORD`: The password for authenticating with MongoDB.
-- `MONGO_URI`: The full URI of the MongoDB connection (e.g., `mongodb://<username>:<password>@<host>:<port>/<database>`).
-- `MONGO_PORT`: The port number on which MongoDB is running.
+- `MONGODB_URI`: The full URI of the MongoDB connection (e.g., `mongodb://<username>:<password>@<host>:<port>/<database>`).
+- `MONGODB_PORT`: The port number on which MongoDB is running.
 - `JWT_SECRET`: The secret key for JWT token generation.
 
 ## Prerequisites
