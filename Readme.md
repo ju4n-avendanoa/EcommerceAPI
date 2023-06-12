@@ -24,7 +24,7 @@ The following environment variables are used in this application:
 - `PORT`: The port number on which the server will run. Default is 3000.
 - `MONGODB_URI`: The MongoDB connection URI.
 - `JWT_SECRET`: The secret key for JWT token generation.
-- `JWT_EXPIRATION`: The expiration time for JWT tokens in seconds.
+
 
 ## Installation
 
