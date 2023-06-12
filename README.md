@@ -2,6 +2,8 @@
 
 EcommerceAPI is a RESTful API for managing an e-commerce application. It provides endpoints for managing products, orders, and user authentication.
 
+**Please note that this project is currently under construction and may not be fully functional.**
+
 ## Features
 
 - User authentication and authorization.
