@@ -53,10 +53,6 @@ npm install
     
 By default, the server runs on port 3000. You can access the API at http://localhost:3000.
 
-## API Documentation
-
-The API documentation is generated using Swagger. Once the server is running, you can access the documentation at http://localhost:3000/api-docs.
-
 ## Configuration
 
 The EcommerceAPI can be configured using environment variables. You can create a `.env` file in the project root and set the environments variables
