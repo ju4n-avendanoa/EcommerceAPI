@@ -1,7 +1,5 @@
 # EcommerceAPI
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
 EcommerceAPI is a RESTful API for managing an e-commerce application. It provides endpoints for managing products, orders, and user authentication.
 
 ## Features
