@@ -50,7 +50,7 @@ Follow the steps below to install and set up the EcommerceAPI:
 To start the EcommerceAPI server, run the following command:
 
 ```javascript
-npm install
+npm start
 ```
     
 By default, the server runs on port 3000. You can access the API at http://localhost:3000.
