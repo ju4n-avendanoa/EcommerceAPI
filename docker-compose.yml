@@ -8,7 +8,7 @@ services:
       - ./:/usr/src/app # Mounts the current directory as a volume in the container
       - /usr/src/app/node_modules
     ports:
-      - 5000:5000 # Maps port 5000 of the host to port 5000 of the container
+      - 5500:5000 # Maps port 5500 of the host to port 5000 of the container
     command: npm run devo # Runs the 'npm run devo' command inside the container
     depends_on:
       - mongodb # Specifies that this service depends on the 'mongodb' service
