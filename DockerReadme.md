@@ -41,7 +41,7 @@ Follow the steps below to run the MongoAPI application in your local environment
    ```bash
    docker-compose up -d
   
- 5. The MongoAPI application should now be up and running. You can access it via http://localhost:3000.
+ 5. The MongoAPI application should now be up and running. You can access it via http://localhost:5500.
 
 ## Customization
 
