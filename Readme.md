@@ -21,7 +21,7 @@ To run the EcommerceAPI, make sure you have the following prerequisites installe
 
 The following environment variables are used in this application:
 
-- `PORT`: The port number on which the server will run. Default is 3000.
+- `PORT`: The port number on which the server will run. Default is 5500.
 - `MONGODB_URI`: The MongoDB connection URI (e.g., `mongodb://<username>:<password>@<host>:<port>/<database>`).
 - `JWT_SECRET`: The secret key for JWT token generation.
 
