@@ -53,7 +53,7 @@ To start the EcommerceAPI server, run the following command:
 npm start
 ```
     
-By default, the server runs on port 3000. You can access the API at http://localhost:3000.
+By default, the server runs on port 5500. You can access the API at http://localhost:5500.
 
 ## Configuration
 
