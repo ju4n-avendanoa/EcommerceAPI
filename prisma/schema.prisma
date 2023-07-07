@@ -40,8 +40,3 @@ model unitarySales {
   products          Products @relation(fields: [productId], references: [id])
   productId         String
 }
-
-
-
-
-
